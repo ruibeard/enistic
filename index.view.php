@@ -11,16 +11,12 @@
 <body class="bg-slate-100  ">
 
 <nav class="flex justify-between items-center mx-auto max-w-screen-xl my-8">
-   <img src="https://752460.smushcdn.com/2508782/wp-content/uploads/elementor/thumbs/Enistic-logo-2022-blue-pqcsziks26b2wm8yspchccxwhjjpfmxehh4hq8dkok.png?lossy=1&strip=1&webp=1/" alt="">
    <p><a href="htts://ruialmeida.me" target="_blank" class="underline">ruialmeida.me</a></p>
 </nav>
 <header class=" max-w-screen-xl mx-auto p-10 my-8 bg-white overflow-hidden shadow-2xl justify-center items-center flex space-x-4">
-   <img class="h-36" src="https://752460.smushcdn.com/2508782/wp-content/uploads/2021/11/16-1024x1024.png?lossy=1&strip=1&webp=1" alt="I found the image in the site's about section">
    <div class=" space-y-4">
-      <p>Hi, Eddy Leung</p>
       <p>Below is my attempt to create the assignment requested. </p>
       <p>I'm using PHP, <a class="underline" href="https://tailwindcss.com/">TailwindCSS</a> and Jquery</p>
-      <p>Link to the source code: <a class="underline" href="https://github.com/ruibeard/enistic">https://github.com/ruibeard/enistic</a></p>
    </div>
 </header>
 <main class="shadow-2xl bg-slate-50 max-w-screen-xl mx-auto  p-8 flex justify-around items-center">
@@ -70,6 +66,15 @@ HTML;
 </main>
 <script>
     $(document).ready(function () {
+        var i = <?= $settingValue[0]->value; ?>;
+        console.log(i);
+        var timer = setInterval(function () {
+            if (i === 0) {
+                clearInterval(timer);
+            }
+            $('#counter').text('Number ' + i--);
+        }, 1000);
+
         $('button#delete').click(function () {
             var id = $(this).val();
             $.ajax({

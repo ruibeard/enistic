@@ -12,3 +12,7 @@
 | Bananas     | 12    |
 
  > The program must be a web page to retrieve this data and display it on the screen in a table.
+
+
+
+#1 counter from 10 to 0
